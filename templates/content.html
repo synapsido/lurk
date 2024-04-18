@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenido de la Carpeta</title>
+</head>
+<body>
+    <h1>Contenido de la Carpeta:</h1>
+    <ul>
+        {% for archivo in archivos %}
+            <li><a href="{{ url_for('descargar_archivo', filename=archivo['nombre']) }}">{{ archivo['nombre'] }}</a> --> {{ "%.2f" % (archivo['tamanio'] / (1024*1024)) }} MB</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
